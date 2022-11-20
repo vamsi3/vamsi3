@@ -1,5 +1,10 @@
 ### Hi there 👋
 
+[]()
+
+![Top languages statistics card](https://github-readme-stats.vercel.app/api/top-langs/?username=vamsi3&hide=assembly,c,cmake,emacs%20lisp,glsl,lex,m,Makefile,matlab,objective-c,openedge%20abl,perl,racket,ruby,shell,tsql,vhdl,yacc&langs_count=10&layout=compact)
+
+
 <!--
 **vamsi3/vamsi3** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
