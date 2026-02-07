@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 8 780 302" fill="none">
+  <defs>
+    <linearGradient id="gd" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#34d399">
+        <animate attributeName="stop-color" values="#34d399;#22d3ee;#a78bfa;#34d399" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#22d3ee">
+        <animate attributeName="stop-color" values="#22d3ee;#a78bfa;#34d399;#22d3ee" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#a78bfa">
+        <animate attributeName="stop-color" values="#a78bfa;#34d399;#22d3ee;#a78bfa" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="gl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669">
+        <animate attributeName="stop-color" values="#059669;#0891b2;#7c3aed;#059669" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#0891b2">
+        <animate attributeName="stop-color" values="#0891b2;#7c3aed;#059669;#0891b2" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#7c3aed">
+        <animate attributeName="stop-color" values="#7c3aed;#059669;#0891b2;#7c3aed" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Typewriter clip masks -->
+    <clipPath id="tw1">
+      <rect x="62" y="172" height="22" width="0">
+        <animate attributeName="width" values="0;8;16;24;32;40;48" dur="0.6s" begin="0.5s" fill="freeze" calcMode="discrete"/>
+      </rect>
+    </clipPath>
+    <clipPath id="tw2">
+      <rect x="62" y="222" height="22" width="0">
+        <animate attributeName="width" values="0;8;16;24;32;40;48;56;64;72;80;88;96" dur="0.9s" begin="2.4s" fill="freeze" calcMode="discrete"/>
+      </rect>
+    </clipPath>
+  </defs>
+  <style>
+    /* Dark/light toggle */
+    .dk { display: block; }
+    .lt { display: none; }
+    @media (prefers-color-scheme: light) {
+      .dk { display: none; }
+      .lt { display: block; }
+    }
+
+    /* Name */
+    .nm {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 46px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    /* Tagline */
+    .tg {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .tg.dk { fill: #9ca3af; }
+    .tg.lt { fill: #6b7280; }
+
+    /* Terminal chrome */
+    .term-dk { fill: #1a1b26; stroke: #2d2f3e; stroke-width: 1; }
+    .term-lt { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1; }
+
+    /* ALL terminal text */
+    .t {
+      font-family: 'SF Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+    }
+
+    .cmd-dk { fill: #d1d5db; }
+    .cmd-lt { fill: #475569; }
+    .prompt-dk { fill: #34d399; }
+    .prompt-lt { fill: #059669; }
+    .out-dk { fill: #22d3ee; }
+    .out-lt { fill: #0891b2; }
+
+    /* Prompts appear */
+    .p1 { opacity: 0; animation: show 0.15s ease forwards 0.4s; }
+    .p2 { opacity: 0; animation: show 0.15s ease forwards 2.3s; }
+    .p3 { opacity: 0; animation: show 0.15s ease forwards 3.8s; }
+
+    /* Responses fade in */
+    .r1 { opacity: 0; animation: show 0.3s ease forwards 1.4s; }
+    .r2 { opacity: 0; animation: show 0.3s ease forwards 3.6s; }
+
+    /* Typing cursor: visible during whoami typing (0.4s–1.4s) */
+    .tc1 {
+      opacity: 0;
+      animation: phase1 1s step-end forwards 0.4s;
+    }
+    @keyframes phase1 {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Typing cursor: visible during echo $STATUS typing (2.3s–3.6s) */
+    .tc2 {
+      opacity: 0;
+      animation: phase2 1.3s step-end forwards 2.3s;
+    }
+    @keyframes phase2 {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Final cursor: appears on new prompt, blinks forever */
+    .fc {
+      opacity: 0;
+      animation: show 0.1s ease forwards 3.8s;
+    }
+    .fc rect {
+      animation: blink 1s step-end infinite 3.8s;
+    }
+
+    .curdk { fill: #d1d5db; }
+    .curlt { fill: #475569; }
+
+    @keyframes show { to { opacity: 1; } }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Constellation */
+    .dot { fill-opacity: 0.25; }
+    .dot.dk { fill: #a78bfa; }
+    .dot.lt { fill: #7c3aed; }
+    .d1 { animation: f1 12s ease-in-out infinite; }
+    .d2 { animation: f2 15s ease-in-out infinite; }
+    .d3 { animation: f3 10s ease-in-out infinite; }
+    .d4 { animation: f4 18s ease-in-out infinite; }
+    .d5 { animation: f5 14s ease-in-out infinite; }
+    @keyframes f1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(8px,-6px); } }
+    @keyframes f2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-10px,5px); } }
+    @keyframes f3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(6px,8px); } }
+    @keyframes f4 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-7px,-9px); } }
+    @keyframes f5 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(12px,4px); } }
+    .cl { stroke-opacity: 0.08; stroke-width: 0.5; }
+    .cl.dk { stroke: #a78bfa; }
+    .cl.lt { stroke: #7c3aed; }
+  </style>
+
+  <!-- ═══ Constellation (dark) ═══ -->
+  <g class="dk">
+    <circle class="dot dk d1" cx="680" cy="30" r="2"/>
+    <circle class="dot dk d2" cx="720" cy="65" r="1.5"/>
+    <circle class="dot dk d3" cx="750" cy="20" r="1"/>
+    <circle class="dot dk d4" cx="640" cy="55" r="1.5"/>
+    <circle class="dot dk d5" cx="770" cy="80" r="2"/>
+    <circle class="dot dk d1" cx="600" cy="15" r="1"/>
+    <circle class="dot dk d3" cx="700" cy="95" r="1.5"/>
+    <circle class="dot dk d2" cx="580" cy="70" r="1"/>
+    <circle class="dot dk d4" cx="660" cy="100" r="2"/>
+    <circle class="dot dk d5" cx="740" cy="45" r="1"/>
+    <circle class="dot dk d1" cx="550" cy="40" r="1.5"/>
+    <circle class="dot dk d2" cx="620" cy="85" r="1"/>
+    <line class="cl dk" x1="680" y1="30" x2="720" y2="65"/>
+    <line class="cl dk" x1="720" y1="65" x2="750" y2="20"/>
+    <line class="cl dk" x1="640" y1="55" x2="680" y2="30"/>
+    <line class="cl dk" x1="770" y1="80" x2="750" y2="20"/>
+    <line class="cl dk" x1="700" y1="95" x2="660" y2="100"/>
+    <line class="cl dk" x1="740" y1="45" x2="770" y2="80"/>
+    <line class="cl dk" x1="550" y1="40" x2="600" y2="15"/>
+    <line class="cl dk" x1="580" y1="70" x2="620" y2="85"/>
+  </g>
+
+  <!-- ═══ Constellation (light) ═══ -->
+  <g class="lt">
+    <circle class="dot lt d1" cx="680" cy="30" r="2"/>
+    <circle class="dot lt d2" cx="720" cy="65" r="1.5"/>
+    <circle class="dot lt d3" cx="750" cy="20" r="1"/>
+    <circle class="dot lt d4" cx="640" cy="55" r="1.5"/>
+    <circle class="dot lt d5" cx="770" cy="80" r="2"/>
+    <circle class="dot lt d1" cx="600" cy="15" r="1"/>
+    <circle class="dot lt d3" cx="700" cy="95" r="1.5"/>
+    <circle class="dot lt d2" cx="580" cy="70" r="1"/>
+    <circle class="dot lt d4" cx="660" cy="100" r="2"/>
+    <circle class="dot lt d5" cx="740" cy="45" r="1"/>
+    <circle class="dot lt d1" cx="550" cy="40" r="1.5"/>
+    <circle class="dot lt d2" cx="620" cy="85" r="1"/>
+    <line class="cl lt" x1="680" y1="30" x2="720" y2="65"/>
+    <line class="cl lt" x1="720" y1="65" x2="750" y2="20"/>
+    <line class="cl lt" x1="640" y1="55" x2="680" y2="30"/>
+    <line class="cl lt" x1="770" y1="80" x2="750" y2="20"/>
+    <line class="cl lt" x1="700" y1="95" x2="660" y2="100"/>
+    <line class="cl lt" x1="740" y1="45" x2="770" y2="80"/>
+    <line class="cl lt" x1="550" y1="40" x2="600" y2="15"/>
+    <line class="cl lt" x1="580" y1="70" x2="620" y2="85"/>
+  </g>
+
+  <!-- ═══ Name + tagline (dark) ═══ -->
+  <text class="nm dk" x="28" y="75" fill="url(#gd)">Hey, I'm Vamsi 👋</text>
+  <text class="tg dk" x="30" y="112">Google DeepMind · Samsung HQ · IIT Bombay CS · JEE Advanced AIR 20</text>
+
+  <!-- ═══ Name + tagline (light) ═══ -->
+  <text class="nm lt" x="28" y="75" fill="url(#gl)">Hey, I'm Vamsi 👋</text>
+  <text class="tg lt" x="30" y="112">Google DeepMind · Samsung HQ · IIT Bombay CS · JEE Advanced AIR 20</text>
+
+  <!-- ═══ Terminal (dark) ═══ -->
+  <g class="dk">
+    <rect class="term-dk" x="28" y="135" width="740" height="160" rx="8"/>
+    <circle cx="48" cy="152" r="5" fill="#ff5f57"/>
+    <circle cx="64" cy="152" r="5" fill="#febc2e"/>
+    <circle cx="80" cy="152" r="5" fill="#28c840"/>
+
+    <!-- Line 1: prompt + typed command -->
+    <g class="p1"><text class="t prompt-dk" x="44" y="187">❯</text></g>
+    <text class="t cmd-dk" x="62" y="187" clip-path="url(#tw1)">whoami</text>
+
+    <!-- Typing cursor 1: follows whoami -->
+    <g class="tc1">
+      <rect class="curdk" x="62" y="175" width="7" height="14" rx="1">
+        <animate attributeName="x" values="62;70;78;86;94;102;110" dur="0.6s" begin="0.5s" fill="freeze" calcMode="discrete"/>
+      </rect>
+    </g>
+
+    <!-- Line 2: response -->
+    <g class="r1"><text class="t out-dk" x="62" y="210">vamsi @ deepmind</text></g>
+
+    <!-- Line 3: prompt + typed command -->
+    <g class="p2"><text class="t prompt-dk" x="44" y="237">❯</text></g>
+    <text class="t cmd-dk" x="62" y="237" clip-path="url(#tw2)">echo $STATUS</text>
+
+    <!-- Typing cursor 2: follows echo $STATUS -->
+    <g class="tc2">
+      <rect class="curdk" x="62" y="225" width="7" height="14" rx="1">
+        <animate attributeName="x" values="62;70;78;86;94;102;110;118;126;134;142;150;158" dur="0.9s" begin="2.4s" fill="freeze" calcMode="discrete"/>
+      </rect>
+    </g>
+
+    <!-- Line 4: response -->
+    <g class="r2"><text class="t out-dk" x="62" y="260">still building</text></g>
+
+    <!-- Line 5: new empty prompt + blinking cursor -->
+    <g class="p3"><text class="t prompt-dk" x="44" y="283">❯</text></g>
+    <g class="fc">
+      <rect class="curdk" x="62" y="271" width="7" height="14" rx="1"/>
+    </g>
+  </g>
+
+  <!-- ═══ Terminal (light) ═══ -->
+  <g class="lt">
+    <rect class="term-lt" x="28" y="135" width="740" height="160" rx="8"/>
+    <circle cx="48" cy="152" r="5" fill="#ff5f57"/>
+    <circle cx="64" cy="152" r="5" fill="#febc2e"/>
+    <circle cx="80" cy="152" r="5" fill="#28c840"/>
+
+    <!-- Line 1: prompt + typed command -->
+    <g class="p1"><text class="t prompt-lt" x="44" y="187">❯</text></g>
+    <text class="t cmd-lt" x="62" y="187" clip-path="url(#tw1)">whoami</text>
+
+    <!-- Typing cursor 1: follows whoami -->
+    <g class="tc1">
+      <rect class="curlt" x="62" y="175" width="7" height="14" rx="1">
+        <animate attributeName="x" values="62;70;78;86;94;102;110" dur="0.6s" begin="0.5s" fill="freeze" calcMode="discrete"/>
+      </rect>
+    </g>
+
+    <!-- Line 2: response -->
+    <g class="r1"><text class="t out-lt" x="62" y="210">vamsi @ deepmind</text></g>
+
+    <!-- Line 3: prompt + typed command -->
+    <g class="p2"><text class="t prompt-lt" x="44" y="237">❯</text></g>
+    <text class="t cmd-lt" x="62" y="237" clip-path="url(#tw2)">echo $STATUS</text>
+
+    <!-- Typing cursor 2: follows echo $STATUS -->
+    <g class="tc2">
+      <rect class="curlt" x="62" y="225" width="7" height="14" rx="1">
+        <animate attributeName="x" values="62;70;78;86;94;102;110;118;126;134;142;150;158" dur="0.9s" begin="2.4s" fill="freeze" calcMode="discrete"/>
+      </rect>
+    </g>
+
+    <!-- Line 4: response -->
+    <g class="r2"><text class="t out-lt" x="62" y="260">still building</text></g>
+
+    <!-- Line 5: new empty prompt + blinking cursor -->
+    <g class="p3"><text class="t prompt-lt" x="44" y="283">❯</text></g>
+    <g class="fc">
+      <rect class="curlt" x="62" y="271" width="7" height="14" rx="1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" fill="none" preserveAspectRatio="none">
+  <style>
+    /* Waves */
+    .w1, .w2, .w3, .w4, .w5 { fill-opacity: 0.18; }
+    .w1 { animation: drift1 7s ease-in-out infinite; }
+    .w2 { animation: drift2 11s ease-in-out infinite; }
+    .w3 { animation: drift3 9s ease-in-out infinite; }
+    .w4 { animation: drift4 13s ease-in-out infinite; }
+    .w5 { animation: drift5 8s ease-in-out infinite; }
+
+    /* Aurora colors - dark mode */
+    .w1 { fill: #34d399; }
+    .w2 { fill: #22d3ee; }
+    .w3 { fill: #a78bfa; }
+    .w4 { fill: #34d399; fill-opacity: 0.12; }
+    .w5 { fill: #22d3ee; fill-opacity: 0.10; }
+
+    @media (prefers-color-scheme: light) {
+      .w1 { fill: #059669; }
+      .w2 { fill: #0891b2; }
+      .w3 { fill: #7c3aed; }
+      .w4 { fill: #059669; }
+      .w5 { fill: #0891b2; }
+    }
+
+    @keyframes drift1 { 0%,100% { transform: translate(0, 0); } 50% { transform: translate(-60px, -8px); } }
+    @keyframes drift2 { 0%,100% { transform: translate(0, 0); } 50% { transform: translate(55px, 6px); } }
+    @keyframes drift3 { 0%,100% { transform: translate(0, 0); } 50% { transform: translate(-45px, -10px); } }
+    @keyframes drift4 { 0%,100% { transform: translate(0, 0); } 50% { transform: translate(70px, 7px); } }
+    @keyframes drift5 { 0%,100% { transform: translate(0, 0); } 50% { transform: translate(-35px, -5px); } }
+
+  </style>
+
+  <!-- Wave layers: paths extend from -80 to 880 so edges stay hidden during drift -->
+  <path class="w5" d="M-80,40 C-20,20 60,55 140,35 C220,15 300,55 380,30 C460,5 540,50 620,25 C700,5 780,45 880,20 L880,160 L-80,160 Z"/>
+  <path class="w4" d="M-80,55 C0,30 80,70 170,45 C260,20 340,65 430,40 C520,15 600,60 680,35 C760,15 840,50 880,30 L880,160 L-80,160 Z"/>
+  <path class="w1" d="M-80,70 C20,35 120,95 220,60 C320,25 420,85 520,50 C620,15 670,65 720,40 C780,20 840,55 880,35 L880,160 L-80,160 Z"/>
+  <path class="w2" d="M-80,85 C0,50 100,105 200,70 C300,35 400,100 500,65 C600,30 660,80 720,55 C780,35 840,70 880,50 L880,160 L-80,160 Z"/>
+  <path class="w3" d="M-80,100 C40,70 120,120 240,85 C340,50 440,110 560,75 C640,50 700,95 780,70 C830,55 860,80 880,65 L880,160 L-80,160 Z"/>
+</svg>
